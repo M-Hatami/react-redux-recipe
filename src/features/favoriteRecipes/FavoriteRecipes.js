@@ -18,7 +18,7 @@ export const FavoriteRecipes = (props) => {
   // Map the recipe objects in favoriteRecipes to render <Recipe /> components.
   return (
     <div id="favorite-recipes" className="recipes-container">
-      {props.favoriteRecipes.map(createRecipeComponent)}
+      {favoriteRecipes.map(createRecipeComponent)}
     </div>
   );
 
