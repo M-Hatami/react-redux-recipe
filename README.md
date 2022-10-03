@@ -1,3 +1,17 @@
+<html lang="fa" dir="rtl">
+<body>
+<h1>معرفی
+</h1>
+<p>نمونه برنامه افزودن و حذف غذاها وگزینه‌های محبوب به و از فهرست محبوبیتها نوشته شده بوسیله ری‌اکت جاوا اسکریپت و ریداکس با امکان جستجو در فهرستهاست:</p>
+<div>
+<img src="https://raw.githubusercontent.com/M-Hatami/react-redux-recipe/master/public/img/%D9%86%D9%85%D9%88%D9%86%D9%87-%D8%B1%D8%A7%D8%A8%D8%B7-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C.jpg" alt="نمونه رابط کاربری"/>
+</div>
+<br/>
+<p>برای ملاحظه ارائه زنده به <a href="https://react-redux-recipe.netlify.app/">نمونه برخط</a> این طرح مراجعه فرمایید.
+</p>
+</body>
+</html>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
