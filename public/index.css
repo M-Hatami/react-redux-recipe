@@ -1,10 +1,25 @@
+@font-face {
+  font-family: Yekan;
+  src: url(./fnt/Yekan.woff2) format("woff2"),
+    url(./fnt/Yekan.woff) format("woff"),
+    url(./fnt/Yekan.ttf) format("truetype"),
+    url(./fnt/Yekan.eot?#iefix) format("embedded-opentype"),
+    url(./fnt/Yekan.svg#WeblogmaYekan) format("svg");
+  font-weight: normal;
+  unicode-range: U+0600 –06FF;
+}
+
+* {
+  font-family: Yekan, Tahoma, "Segoe UI", sans-serif, "Noto Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji";
+}
+
 html,
 body,
 #root,
 #app {
   height: 100%;
   margin: 15px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #app {
@@ -136,7 +151,7 @@ body,
   background-color: #efd9ca;
   font-weight: bold;
   color: #141c3a;
-  font-size: 12px;
+  font-size: 0.8rem;
   border: none;
   cursor: pointer;
   display: none;

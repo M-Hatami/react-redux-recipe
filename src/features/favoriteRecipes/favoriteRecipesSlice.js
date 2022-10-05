@@ -1,9 +1,6 @@
-// For this exercise only, the favoriteRecipes slice will contain the following initial recipes.
-const initialState = [
-  { id: 0, name: "چلو جوجه کباب", img: "img/چلو-جوجه-کباب.jpg" },
-  { id: 1, name: "پلومرغ", img: "img/پلومرغ.jpg" },
-  { id: 2, name: "آش شله قلمکار", img: "img/آش-شله-قلمکار.jpg" },
-];
+import { selectSearchTerm } from "../searchTerm/searchTermSlice.js";
+
+const initialState = [];
 export const favoriteRecipesReducer = (
   favoriteRecipes = initialState,
   action
@@ -33,3 +30,14 @@ export function removeRecipe(recipe) {
     payload: recipe,
   };
 }
+
+export const selectFavoriteRecipes = (state) => state.favoriteRecipes;
+
+export const selectFilteredFavoriteRecipes = (state) => {
+  const favoriteRecipes = selectFavoriteRecipes(state);
+  const searchTerm = selectSearchTerm(state);
+
+  return favoriteRecipes.filter((recipe) =>
+    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+};

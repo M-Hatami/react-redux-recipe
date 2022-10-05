@@ -1,23 +1,25 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  removeRecipe,
+  selectFilteredFavoriteRecipes,
+} from "./favoriteRecipesSlice.js";
 import FavoriteButton from "../../components/FavoriteButton";
 import Recipe from "../../components/Recipe";
-// Import removeRecipe from favoriteRecipesSlice.js
-import { removeRecipe } from "./favoriteRecipesSlice.js";
-
 const unfavoriteIconUrl = "../../../img/icons/heart-circle-minus-solid.svg";
 
-export const FavoriteRecipes = (props) => {
-  // Extract dispatch and favoriteRecipes from props.
-  const { favoriteRecipes, dispatch } = props;
+export const FavoriteRecipes = () => {
+  const favoriteRecipes = useSelector(selectFilteredFavoriteRecipes);
+  const dispatch = useDispatch();
 
   const onRemoveRecipeHandler = (recipe) => {
-    // Dispatch a removeRecipe() action.
+    // Dispatch the action below.
     dispatch(removeRecipe(recipe));
   };
 
-  // Map the recipe objects in favoriteRecipes to render <Recipe /> components.
   return (
-    <div id="favorite-recipes" className="recipes-container">
+    <div className="recipes-container">
       {favoriteRecipes.map(createRecipeComponent)}
     </div>
   );
@@ -30,7 +32,7 @@ export const FavoriteRecipes = (props) => {
           onClickHandler={() => onRemoveRecipeHandler(recipe)}
           icon={unfavoriteIconUrl}
         >
-          حذف از محبوب‌ها
+          حذف منتخب
         </FavoriteButton>
       </Recipe>
     );

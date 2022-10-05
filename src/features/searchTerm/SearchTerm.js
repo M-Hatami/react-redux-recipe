@@ -1,11 +1,18 @@
 import React from "react";
-import { setSearchTerm, clearSearchTerm } from "./searchTermSlice.js";
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  setSearchTerm,
+  clearSearchTerm,
+  selectSearchTerm,
+} from "./searchTermSlice.js";
 
 const searchIconUrl = "../img/icons/search.svg";
 const clearIconUrl = "../img/icons/clear.svg";
 
-export const SearchTerm = (props) => {
-  const { searchTerm, dispatch } = props;
+export const SearchTerm = () => {
+  const searchTerm = useSelector(selectSearchTerm);
+  const dispatch = useDispatch();
 
   const onSearchTermChangeHandler = (e) => {
     const userInput = e.target.value;
@@ -24,7 +31,7 @@ export const SearchTerm = (props) => {
         type="text"
         value={searchTerm}
         onChange={onSearchTermChangeHandler}
-        placeholder="جستجوی غذا"
+        placeholder="جستجو"
       />
       {searchTerm.length > 0 && (
         <button
