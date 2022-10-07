@@ -14,7 +14,7 @@ export const favoriteRecipesSlice = createSlice({
   },
 });
 
-export const selectFavoriteRecipes = (state) => state.favoriteRecipes;
+const selectFavoriteRecipes = (state) => state.favoriteRecipes;
 
 export const selectFilteredFavoriteRecipes = (state) => {
   const favoriteRecipes = selectFavoriteRecipes(state);
