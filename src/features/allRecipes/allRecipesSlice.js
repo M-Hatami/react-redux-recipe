@@ -1,6 +1,38 @@
 import allRecipesData from "../../data.js";
 import { selectSearchTerm } from "../searchTerm/searchTermSlice.js";
 
+/** An Example for fetching data from an api:
+  import { fetchRecipes } from '../../app/api'
+  import { createSlice } from "@reduxjs/toolkit";
+  
+  const loadRecipes = () => {
+    return async (dispatch, getState) => {
+      const payload = await fetchRecipes();
+      dispatch({
+        type: 'allRecipes/addRecipes',
+        payload: payload
+      });
+    }
+  }
+  
+  export const allRecipesSlice = createSlice({
+    name: "allRecipes",
+    initialState: {
+      recipes: [],
+      isLoading: false,
+      hasError: false,
+    },
+    reducers: {
+      addRecipes(state, action) {
+        state.recipes = action.payload
+      }
+    },  
+  });
+  
+  export default allRecipesSlice.reducer;
+*/
+
+
 export const loadData = () => {
   return {
     type: "allRecipes/loadData",
